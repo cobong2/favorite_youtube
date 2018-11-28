@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-
+		<typeAlias alias="UserVO" type="com.myproject.myapp.model.UserVO" />
+		<typeAlias alias="YoutubeVO" type="com.myproject.myapp.model.YoutubeVO" />
 	</typeAliases>
 </configuration>

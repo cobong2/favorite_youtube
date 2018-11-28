@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:url value="/login" var="loginRul" />
+	<c:url value="/login" var="loginUrl" />
 	<form:form name="f" action="${loginUrl}" method="POST">
 		<c:if test="${param.error != null}">
 			<p>아이디와 비밀번호가 잘못되었습니다.</p>
@@ -22,6 +22,8 @@
 			<label for="password">패스워드</label>
 			<input type="password" id="password" name="password" />
 		</p>
+		<input type="submit" class="btn" value="로그인">
 	</form:form>
+	<button onclick="location.href='join'">회원가입</button>
 </body>
 </html>
