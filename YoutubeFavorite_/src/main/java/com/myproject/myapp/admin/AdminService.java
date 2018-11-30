@@ -77,7 +77,7 @@ public class AdminService {
 				path.mkdirs();
 			}
 			BufferedImage sourceImg = ImageIO.read(img);
-			BufferedImage destImg = Scalr.resize(sourceImg, Scalr.Method.AUTOMATIC, Scalr.Mode.FIT_TO_HEIGHT, 50);
+			BufferedImage destImg = Scalr.resize(sourceImg, Scalr.Method.AUTOMATIC, Scalr.Mode.FIT_TO_HEIGHT, 100);
 			File thumbImg = new File(thumbImgPath, fileName);
 			ImageIO.write(destImg, ext.toLowerCase(), thumbImg);
 		} catch (IOException e) {
