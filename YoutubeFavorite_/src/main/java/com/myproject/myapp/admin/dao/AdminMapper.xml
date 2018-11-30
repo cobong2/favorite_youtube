@@ -9,13 +9,15 @@
 		(u_no, u_id,
 		u_pw, u_name, u_auth)
 		values
-		(seq_yf_user.nextval, #{u_id}, #{u_pw}, #{u_name}, #{u_auth})
+		(seq_yf_user.nextval, #{u_id}, #{u_pw},
+		#{u_name}, #{u_auth})
 	</insert>
 
 	<insert id="insertURL" parameterType="YoutubeVO">
 		insert into yf_youtube
-		(y_no, y_url)
+		(y_no, y_url, y_title)
 		values
-		(seq_yf_youtube.nextval, #{y_url})
+		(seq_yf_youtube.nextval, #{y_url},
+		#{y_title})
 	</insert>
 </mapper>

@@ -2,9 +2,11 @@ package com.myproject.myapp.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.myproject.myapp.model.GallaryVO;
 import com.myproject.myapp.model.UserVO;
 import com.myproject.myapp.model.YoutubeVO;
 
@@ -48,14 +50,29 @@ public class AdminController {
 	}
 
 	@RequestMapping("insertURL")
-	public String inserURLGet() {
+	public String insertURLGet() {
 		return "admin/insertURL";
 	}
 
 	@RequestMapping(value = "insertURL", method = RequestMethod.POST)
-	public String inserURLPost(YoutubeVO vo) {
+	public String insertURLPost(YoutubeVO vo) {
+		// TODO insert 수행
+		System.out.println("url : " + vo.getY_url());
+		System.out.println("title : " + vo.getY_title());
 		service.insertURL(vo);
-		return "redirect:main";
+		return "redirect:/client/list";
 	}
 
+	@RequestMapping("insertGallary")
+	public String insertGallaryGet() {
+		return "admin/insertGallary";
+	}
+
+	@RequestMapping(value = "insertGallary", method = RequestMethod.POST)
+	public String insertGallaryPost(GallaryVO vo) {
+		System.out.println("title : " + vo.getTitle());
+		System.out.println("img : " + vo.getImg());
+		service.insertGallary(vo);
+		return "redirect:/client/viewGallary";
+	}
 }

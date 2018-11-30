@@ -6,5 +6,6 @@
 	<typeAliases>
 		<typeAlias alias="UserVO" type="com.myproject.myapp.model.UserVO" />
 		<typeAlias alias="YoutubeVO" type="com.myproject.myapp.model.YoutubeVO" />
+		<typeAlias alias="GallaryVO" type="com.myproject.myapp.model.GallaryVO" />
 	</typeAliases>
 </configuration>

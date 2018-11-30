@@ -10,13 +10,12 @@
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
 	<http use-expressions="true">
-		<intercept-url pattern="/admin/insertURL" access="hasAnyRole('ROLE_ADM, ROLE_USER')" />
+		<intercept-url pattern="/admin/viewGallary" access="permitAll" />
+		<intercept-url pattern="/admin/insertGallary" access="permitAll" />
+		<intercept-url pattern="/admin/loginForm" access="permitAll" />
 		<intercept-url pattern="/admin/join" access="permitAll" />
-		<intercept-url pattern="/admin/loginForm"
-			access="permitAll" />
-		<intercept-url pattern="/admin/**"
-			access="hasRole('ROLE_ADM')" /> <!-- hasRole 권한 한 명 줄 때 -->
-		<intercept-url pattern="client/**" access="permitAll" /> <!-- hasAnyRole 권한 여러 명 줄 때 -->
+		<intercept-url pattern="/admin/**" access="hasRole('ADM')" />
+		<intercept-url pattern="/client/**" access="permitAll" /> <!-- hasAnyRole 권한 여러 명 줄 때 -->
 
 		<!-- login page // login 성공 시 // login 실패 시 -->
 		<form-login login-page="/admin/loginForm"
