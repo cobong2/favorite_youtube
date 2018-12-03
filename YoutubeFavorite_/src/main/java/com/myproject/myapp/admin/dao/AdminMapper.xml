@@ -20,4 +20,11 @@
 		(seq_yf_youtube.nextval, #{y_url},
 		#{y_title})
 	</insert>
+
+	<insert id="insertGallary" parameterType="GallaryVO">
+		insert into yf_gallary
+		(g_no, g_title, g_path)
+		values
+		(seq_yf_gallary.nextval, #{g_title}, #{g_path})
+	</insert>
 </mapper>

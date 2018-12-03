@@ -10,8 +10,9 @@
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
 	<http use-expressions="true">
+		<intercept-url pattern="/admin/gallaryDetail" access="permitAll" />
 		<intercept-url pattern="/admin/viewGallary" access="permitAll" />
-		<intercept-url pattern="/admin/insertGallary" access="permitAll" />
+		<intercept-url pattern="/admin/insertGallary" access="hasRole('ADM')" />
 		<intercept-url pattern="/admin/loginForm" access="permitAll" />
 		<intercept-url pattern="/admin/join" access="permitAll" />
 		<intercept-url pattern="/admin/**" access="hasRole('ADM')" />

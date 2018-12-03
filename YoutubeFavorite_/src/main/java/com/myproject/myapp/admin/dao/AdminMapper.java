@@ -5,7 +5,7 @@ import com.myproject.myapp.model.UserVO;
 import com.myproject.myapp.model.YoutubeVO;
 
 public interface AdminMapper {
-	public void join(UserVO p);
-	public void insertURL(YoutubeVO p);
-	public void insertGallary(GallaryVO p);
+	public void join(UserVO vo);
+	public void insertURL(YoutubeVO vo);
+	public void insertGallary(GallaryVO vo);
 }

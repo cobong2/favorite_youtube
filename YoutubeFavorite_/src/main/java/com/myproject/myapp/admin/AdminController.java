@@ -70,7 +70,7 @@ public class AdminController {
 
 	@RequestMapping(value = "insertGallary", method = RequestMethod.POST)
 	public String insertGallaryPost(GallaryVO vo) {
-		System.out.println("title : " + vo.getTitle());
+		System.out.println("title : " + vo.getG_title());
 		System.out.println("img : " + vo.getImg());
 		service.insertGallary(vo);
 		return "redirect:/client/viewGallary";

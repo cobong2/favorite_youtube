@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img src="/myapp/res/img/2018/11/30/Desert.jpg">
-	<img src="/myapp/res/img/thumb/2018/11/30/Desert.jpg">
+	<c:forEach var="i" items="${list}">
+		<a href="gallaryDetail?g_no=${i.g_no}"><img src="/myapp/res/img/thumb/${i.g_path}"></a>
+	</c:forEach>
 </body>
 </html>

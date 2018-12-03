@@ -14,5 +14,6 @@
 		<input type="submit" value="로그아웃" />
 	</form:form>
 	<a href="insertURL">URL 등록</a>
+	<a href="insertGallary">Gallery 등록</a>
 </body>
 </html>

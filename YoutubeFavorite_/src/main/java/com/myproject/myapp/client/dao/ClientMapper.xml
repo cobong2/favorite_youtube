@@ -2,9 +2,19 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+
 <mapper namespace="com.myproject.myapp.client.dao.ClientMapper">
-	<select id="getList" resultType="com.myproject.myapp.model.YoutubeVO">
+	<select id="getList" resultType="YoutubeVO">
 		select * from yf_youtube
+	</select>
+
+	<select id="getGallaryList" resultType="GallaryVO">
+		select * from yf_gallary
+		order by g_no
+	</select>
+
+	<select id="gallaryDetail" resultType="GallaryVO" parameterType="int">
+		select * from yf_gallary
+		where g_no = #{g_no}
 	</select>
 </mapper>

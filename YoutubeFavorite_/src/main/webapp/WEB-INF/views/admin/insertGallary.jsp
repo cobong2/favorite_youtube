@@ -9,7 +9,7 @@
 <script type="text/javascript">
 	function beforeSend() {
 		var frm = document.getElementById("frm");
-		if (frm.title.value == "") {
+		if (frm.g_title.value == "") {
 			alert("제목이 입력되지 않았습니다.");
 			return false;
 		} else if (frm.img.value == "") {
@@ -23,7 +23,7 @@
 <body>
 	<form:form id="frm" onsubmit="return beforeSend()" enctype="multipart/form-data">
 		<p>
-			제목 : <input type="text" name="title">
+			제목 : <input type="text" name="g_title">
 		</p>
 		<p>
 			이미지 : <input type="file" name="img" accept="image/*"> <!-- accept 이미지 파일만 선택할 수 있게끔 --> 

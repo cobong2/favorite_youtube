@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.myproject.myapp.model.GallaryVO;
 import com.myproject.myapp.model.YoutubeVO;
 
 @Controller
@@ -19,14 +21,6 @@ public class ClientController {
 
 	@Autowired
 	private ClientService service;
-
-	@RequestMapping("list")
-	public String list(Model model) {
-
-		List<YoutubeVO> list = service.getList();
-		model.addAttribute("list", list);
-		return "client/list";
-	}
 
 	@RequestMapping("jostList")
 	@ResponseBody
@@ -44,7 +38,36 @@ public class ClientController {
 	}
 
 	@RequestMapping("viewGallary")
-	public String viewGallary() {
+	public String viewGallary(Model model) {
+		List<GallaryVO> list = service.gallaryList();
+		model.addAttribute("list", list);
 		return "client/viewGallary";
+	}
+
+	@RequestMapping("gallaryDetail")
+	public String gallaryDetail(@RequestParam(name = "g_no") int g_no, Model model) {
+		GallaryVO result = service.gallaryDetail(g_no);
+		model.addAttribute("result", result);
+		return "client/gallaryDetail";
+	}
+
+	@RequestMapping("jsonYoutubeList")
+	@ResponseBody
+	public List<YoutubeVO> jsonYoutubeList() {
+		List<YoutubeVO> list = service.getList();
+		return list;
+	}
+
+	@RequestMapping("jsonGallaryList")
+	@ResponseBody
+	public List<GallaryVO> jsonGallaryList() {
+		return service.gallaryList();
+	}
+
+	@RequestMapping("youtubeList")
+	public String list(Model model) {
+		List<YoutubeVO> list = service.getList();
+		model.addAttribute("list", list);
+		return "client/list";
 	}
 }
